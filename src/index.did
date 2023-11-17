@@ -1,0 +1,30 @@
+type WasteEntry = record {
+  id : text;
+  wasteType : text;
+  userId : principal;
+  createdAt : nat64;
+  recycledQuantity : float64;
+  updatedAt : opt nat64;
+  isVerified : bool;
+  quantity : float64;
+  location : text;
+};
+type WasteEntryPayload = record {
+  wasteType : text;
+  recycledQuantity : float64;
+  isVerified : bool;
+  quantity : float64;
+  location : text;
+};
+type _AzleResult = variant { Ok : WasteEntry; Err : text };
+type _AzleResult_1 = variant { Ok : vec WasteEntry; Err : text };
+service : () -> {
+  createWasteEntry : (WasteEntryPayload) -> (_AzleResult);
+  deleteWasteEntry : (text) -> (_AzleResult);
+  getAllWasteEntries : () -> (_AzleResult_1) query;
+  getVerifiedWasteEntries : () -> (_AzleResult_1) query;
+  getWasteEntry : (text) -> (_AzleResult) query;
+  recycleWaste : (text, float64) -> (_AzleResult);
+  updateWasteEntry : (text, WasteEntryPayload) -> (_AzleResult);
+  verifyWasteEntry : (text) -> (_AzleResult);
+}
