@@ -3,11 +3,11 @@
         "dfx_install": "DFX_VERSION=0.14.0 sh -ci \"$(curl -fsSL https://sdk.dfinity.org/install.sh)\"",
         "replica_start": "dfx start --background",
         "replica_stop": "dfx stop",
-        "canister_deploy_local": "dfx deploy Waste_Recycling_Management_System",
-        "canister_deploy_mainnet": "dfx deploy --network ic Waste_Recycling_Management_System",
-        "canister_uninstall": "dfx canister uninstall-code Waste_Recycling_Management_System",
-        "canister_call_get_message": "dfx canister call Waste_Recycling_Management_System getMessage",
-        "canister_call_set_message": "dfx canister call Waste_Recycling_Management_System setMessage '(\"Hello world!\")'"
+        "canister_deploy_local": "dfx deploy hello_world",
+        "canister_deploy_mainnet": "dfx deploy --network ic hello_world",
+        "canister_uninstall": "dfx canister uninstall-code hello_world",
+        "canister_call_get_message": "dfx canister call hello_world getMessage",
+        "canister_call_set_message": "dfx canister call hello_world setMessage '(\"Hello world!\")'"
     },
     "dependencies": {
         "@dfinity/agent": "^0.15.6",
@@ -20,4 +20,3 @@
         "@types/uuid": "^9.0.2"
     }
 }
-
